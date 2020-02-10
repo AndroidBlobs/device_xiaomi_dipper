@@ -111,14 +111,22 @@ vendor/etc/acdbdata/Forte/Forte_Speaker_cal.acdb
 vendor/etc/acdbdata/Forte/Forte_workspaceFile.qwsp
 
 # Audio-Hardware
+vendor/lib/hw/audio.bluetooth.default.so
+vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.sdm845.so
+vendor/lib/hw/audio.r_submix.default.so
+vendor/lib/hw/audio.usb.default.so
 vendor/lib/soundfx/libqcompostprocbundle.so
 vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcomvoiceprocessing.so
 vendor/lib/soundfx/libvolumelistener.so
+vendor/lib64/hw/audio.bluetooth.default.so
+vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.sdm845.so
+vendor/lib64/hw/audio.r_submix.default.so
+vendor/lib64/hw/audio.usb.default.so
 vendor/lib64/soundfx/libqcompostprocbundle.so
 vendor/lib64/soundfx/libqcomvisualizer.so
 vendor/lib64/soundfx/libqcomvoiceprocessing.so
@@ -131,8 +139,6 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib/hw/audio.bluetooth.default.so
-vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib/libbluetooth_audio_session.so
@@ -143,8 +149,6 @@ vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/hw/audio.bluetooth.default.so
-vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib64/libbluetooth_audio_session.so
@@ -821,6 +825,10 @@ vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 -vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libtinyxml2_1.so
+
+# HotwordEnrollment
+-product/priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
+-product/priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk
 
 # IOP
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
@@ -1552,9 +1560,9 @@ vendor/lib64/libssc_default_listener.so
 vendor/lib64/sensors.ssc.so
 
 # Soter
--app/SoterService/SoterService.apk
 product/framework/vendor.qti.hardware.soter-V1.0-java.jar
 product/lib64/vendor.qti.hardware.soter@1.0.so
+-vendor/app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/bin/SoterProvisioningTool
 vendor/bin/vendor.qti.hardware.soter@1.0-provision
@@ -1571,7 +1579,9 @@ vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Thermal
+vendor/bin/hw/android.hardware.thermal@1.0-service
 vendor/bin/thermal-engine
+vendor/etc/init/android.hardware.thermal@1.0-service.rc
 vendor/etc/thermal-engine-sdm845-arvr.conf
 vendor/etc/thermal-engine-sdm845-camera.conf
 vendor/etc/thermal-engine-sdm845-class0.conf
@@ -1585,7 +1595,9 @@ vendor/etc/thermal-engine-sdm845-sgame.conf
 vendor/etc/thermal-engine-sdm845-tgame.conf
 vendor/etc/thermal-engine-sdm845.conf
 vendor/etc/thermal-engine.conf
+vendor/lib/hw/android.hardware.thermal@1.0-impl.so
 -vendor/lib/libthermalclient.so
+vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
 -vendor/lib64/libthermalclient.so
 
 # Thermal-Hardware
@@ -1600,8 +1612,6 @@ vendor/lib64/libtime_genoff.so
 
 # Touch-improve
 -vendor/app/com.qualcomm.qti.improvetouch.service/com.qualcomm.qti.improvetouch.service.apk
--vendor/app/com.qualcomm.qti.improvetouch.service/oat/arm64/com.qualcomm.qti.improvetouch.service.odex
--vendor/app/com.qualcomm.qti.improvetouch.service/oat/arm64/com.qualcomm.qti.improvetouch.service.vdex
 vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
 vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so
 vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
@@ -1751,7 +1761,7 @@ vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.touchfeature@1.0-service
 vendor/bin/mlipayd@1.1
 vendor/bin/mtd@1.2
-vendor/bin/tidad@1.1
+vendor/bin/tidad@1.2
 vendor/etc/init/android.hardware.dumpstate@1.0-service.xiaomi.rc
 vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc
@@ -1759,7 +1769,7 @@ vendor/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.mtdservice@1.2-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.tidaservice@1.1-service.rc
+vendor/etc/init/vendor.xiaomi.hardware.tidaservice@1.2-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.touchfeature@1.0-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.vsimapp@1.0-service.rc
 vendor/lib/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
@@ -1769,8 +1779,7 @@ vendor/lib/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
 vendor/lib/hw/vendor.xiaomi.hardware.touchfeature@1.0-impl.so
 vendor/lib/libmlipay.so
 vendor/lib/libmlipay@1.1.so
-vendor/lib/libmt.so
-vendor/lib/libtida@1.1.so
+vendor/lib/libtida@1.2.so
 vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0.so
 vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
 vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1.so
@@ -1783,6 +1792,7 @@ vendor/lib/vendor.xiaomi.hardware.mlipay@1.1.so
 vendor/lib/vendor.xiaomi.hardware.mtdservice@1.0.so
 vendor/lib/vendor.xiaomi.hardware.tidaservice@1.0.so
 vendor/lib/vendor.xiaomi.hardware.tidaservice@1.1.so
+vendor/lib/vendor.xiaomi.hardware.tidaservice@1.2.so
 vendor/lib/vendor.xiaomi.hardware.touchfeature@1.0.so
 vendor/lib/vendor.xiaomi.hardware.vsimapp@1.0.so
 vendor/lib64/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
@@ -1792,9 +1802,7 @@ vendor/lib64/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
 vendor/lib64/hw/vendor.xiaomi.hardware.touchfeature@1.0-impl.so
 vendor/lib64/libmlipay.so
 vendor/lib64/libmlipay@1.1.so
-vendor/lib64/libmt.so
-vendor/lib64/libmt@1.2.so
-vendor/lib64/libtida@1.1.so
+vendor/lib64/libtida@1.2.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
@@ -1809,6 +1817,7 @@ vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.1.so
 vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.2.so
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.1.so
+vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.2.so
 vendor/lib64/vendor.xiaomi.hardware.touchfeature@1.0.so
 
 # rootdir
@@ -1837,22 +1846,11 @@ vendor/etc/lhd.conf
 
 # Misc
 -vendor/app/CACertService/CACertService.apk
-vendor/app/CACertService/oat/arm64/CACertService.odex
-vendor/app/CACertService/oat/arm64/CACertService.vdex
 -vendor/app/CneApp/CneApp.apk
-vendor/app/CneApp/oat/arm64/CneApp.odex
-vendor/app/CneApp/oat/arm64/CneApp.vdex
 -vendor/app/GFManager/GFManager.apk
-vendor/app/GFManager/oat/arm64/GFManager.odex
-vendor/app/GFManager/oat/arm64/GFManager.vdex
 -vendor/app/GFTest/GFTest.apk
-vendor/app/GFTest/oat/arm64/GFTest.odex
-vendor/app/GFTest/oat/arm64/GFTest.vdex
 -vendor/app/IWlanService/IWlanService.apk
-vendor/app/IWlanService/oat/arm64/IWlanService.odex
-vendor/app/IWlanService/oat/arm64/IWlanService.vdex
-vendor/app/TimeService/oat/arm64/TimeService.odex
-vendor/app/TimeService/oat/arm64/TimeService.vdex
+-vendor/app/NotchOverlay/NotchOverlay.apk
 vendor/bin/adpl
 vendor/bin/athdiag
 vendor/bin/batteryd
@@ -1914,10 +1912,13 @@ vendor/bin/wfdvndservice
 vendor/bin/wifilearner
 vendor/bin/wigighalsvc
 vendor/bin/wigig_wiburn
--vendor/data-app/aiasst_service/aiasst_service.apk
--vendor/data-app/SmartHome/SmartHome.apk
--vendor/data-app/XMRemoteController/XMRemoteController.apk
--vendor/data-app/Youpin/Youpin.apk
+-vendor/data-app/Drive/Drive.apk
+-vendor/data-app/Duo/Duo.apk
+-vendor/data-app/Miui_Fashiongallery_global_new/Miui_Fashiongallery_global_new.apk
+-vendor/data-app/Music2/Music2.apk
+-vendor/data-app/Photos/Photos.apk
+-vendor/data-app/Videos/Videos.apk
+-vendor/data-app/wps_lite/wps_lite.apk
 vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/configstore/wigig.xml
 vendor/etc/device_features/dipper.xml
@@ -1955,6 +1956,7 @@ vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.wigig.supptunnel@1.0-service.rc
 vendor/etc/init/vppservice.rc
 vendor/etc/init/wfdvndservice.rc
+vendor/etc/NOTICE_GPL.html.gz
 vendor/etc/pm_test_item_config.xml
 vendor/etc/rcv.wav
 vendor/etc/rcv_hp.wav
@@ -2007,6 +2009,7 @@ vendor/lib/libmiracast.so
 vendor/lib/libmmparser_lite_proprietary.so
 vendor/lib/libmmrtpdecoder_proprietary.so
 vendor/lib/libmmrtpencoder_proprietary.so
+vendor/lib/libmt.so
 vendor/lib/libnanopb.so
 vendor/lib/libopus.so
 vendor/lib/libperfconfig.so
@@ -2102,6 +2105,8 @@ vendor/lib64/libmiracast.so
 vendor/lib64/libmls_utils_vendor.so
 vendor/lib64/libmls_v4l2enc_vendor.so
 vendor/lib64/libmmparser_lite_proprietary.so
+vendor/lib64/libmt.so
+vendor/lib64/libmt@1.2.so
 vendor/lib64/libnanopb.so
 vendor/lib64/libpcap.so
 vendor/lib64/libperfconfig.so

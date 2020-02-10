@@ -22,9 +22,10 @@ ro.qualcomm.cabl=0
 # prop for amoled panel
 ro.display.type=oled
 
+ro.sf.lcd_density=440
 
 #support night mode 2.0
-ro.eyecare.brightness.threshold=7
+ro.eyecare.brightness.threshold=-1
 ro.eyecare.brightness.level=8
 ro.hist.brightness.threshold=5
 
@@ -318,5 +319,8 @@ persist.vendor.btstack.connect.peer_earbud=true
 
 #enable bg dexopt
 persist.bg.dexopt.enable=true
+
+#quick charge type detect
+persist.quick.charge.detect=1
 
 #

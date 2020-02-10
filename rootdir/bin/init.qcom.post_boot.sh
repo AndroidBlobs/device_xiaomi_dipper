@@ -4179,7 +4179,7 @@ case "$target" in
         # CPU is isolated/hotplugged, the IRQ affinity is adjusted
         # to one of the CPU from the default IRQ affinity mask.
         echo f > /proc/irq/default_smp_affinity
-
+        chmod 666 /sys/class/power_supply/battery/dc_thermal_levels
         if [ -f /sys/devices/soc0/soc_id ]; then
                 soc_id=`cat /sys/devices/soc0/soc_id`
         else
@@ -4340,8 +4340,10 @@ case "$target" in
 	arch_type=`uname -m`
 	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
 	MemTotal=${MemTotalStr:16:8}
-	if [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 5505024 ]; then
-	    echo "18432,23040,27648,32256,85296,120640" > /sys/module/lowmemorykiller/parameters/minfree
+	if [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 7602176 ]; then
+	    echo "18432,23040,27648,45158,119414,168896" > /sys/module/lowmemorykiller/parameters/minfree
+        else
+            echo "18432,23040,27648,38708,102356,144768" > /sys/module/lowmemorykiller/parameters/minfree
 	fi
     ;;
 esac
